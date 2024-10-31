@@ -4,115 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roman Miletitch</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background-color: #f0f4f7;
-      color: #333;
-    }
-
-    .container {
-      max-width: 700px;
-      padding: 30px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      text-align: left;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      color: #4a7dbf;
-      margin-bottom: 20px;
-      font-weight: bold;
-      animation: floatText 3s ease-in-out infinite;
-    }
-
-    @keyframes floatText {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    .intro {
-      font-size: 1.5em;
-      color: #4a7dbf;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 1.1em;
-      color: #555;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-
-    a {
-      color: #4a7dbf;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    a:hover {
-      color: #305b8f;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .gallery img {
-      width: 48%;
-      max-width: 220px;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    ul li {
-      font-size: 1.1em;
-      margin: 10px 0;
-    }
-
-    .footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #777;
-    }
-
-    .highlight {
-      color: #4a7dbf;
-      font-weight: bold;
-    }
-
-    .emphasis {
-      font-size: 1.2em;
-      color: #4a7dbf;
-      margin-top: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="p5-background"></div> <!-- Background for p5.js canvas -->
+
   <div class="container">
     <h1>We'll Be Right Back!</h1>
     <p class="intro">Hey, I'm Roman Miletitch.</p>
@@ -146,5 +42,9 @@
       <img src="image4.jpg" alt="Digital Art Sample 4" />
     </div>
   </div>
+
+  <!-- p5.js Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="sketch.js"></script>
 </body>
 </html>
