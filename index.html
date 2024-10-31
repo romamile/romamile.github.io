@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birds of a Feather Digital Art</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f4f7;
+      color: #333;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #4a7dbf;
+      margin-bottom: 20px;
+      font-weight: bold;
+      animation: floatText 3s ease-in-out infinite;
+    }
+
+    @keyframes floatText {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: #4a7dbf;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #305b8f;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 45%;
+      max-width: 220px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    .highlight {
+      color: #4a7dbf;
+      font-weight: bold;
+    }
+
+    .emphasis {
+      font-size: 1.2em;
+      color: #4a7dbf;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>We'll Be Right Back!</h1>
+    <h2>Hey, I'm Roman Miletitch.</h2>
+    <p>
+      I'm at last tackling the disaster zone that is my online communication, so this website is currently in metamorphosis!
+    </p>
+    <p>
+      For any inquiries, you can contact me by mail at <a href="mailto:roman.miletitch@gmail.com">roman.miletitch@gmail.com</a> or on Instagram:
+      <a href="https://instagram.com/romamile">@romamile</a>
+    </p>
+
+    <p>In the meantime, you can find me...</p>
+
+    <ul>
+      <li>Creating interactive drawing installations at <a href="https://cosmodule.com/papertronics/">Papertronics</a></li>
+      <li>Organizing and cooking at my pop-up restaurant <a href="https://www.instagram.com/boaf_berlin/">Birds of a Feather</a></li>
+      <li>Presenting work about Theater and VR in Avignon at <a href="https://ictt.univ-avignon.fr/programme-JIT/">JIT Conference</a></li>
+      <li>Exhibiting <a href="https://flippaper.org/">Flippaper</a> at <a href="https://miskartinstitute.org/en/misk-art-week/Misk-art-week-2024/creative-forum">Misk Creative Forum</a></li>
+      <li>And many other projects I'll share on the final site!</li>
+    </ul>
+
+    <p class="footer">
+      PS: After many years of hiatus, our free workshop "Food&Code" about Digital Art and Cooking is returning to <span class="highlight">Berlin</span> on <span class="highlight">Dec 7th</span>. Contact me to register!
+    </p>
+
+    <div class="gallery">
+      <img src="image1.jpg" alt="Digital Art Sample 1" />
+      <img src="image2.jpg" alt="Digital Art Sample 2" />
+      <img src="image3.jpg" alt="Digital Art Sample 3" />
+      <img src="image4.jpg" alt="Digital Art Sample 4" />
+    </div>
+  </div>
+</body>
+</html>
