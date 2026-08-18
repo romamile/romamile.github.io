@@ -1,0 +1,82 @@
+---
+layout: default
+---
+<main class="project-page">
+  <div class="project-hero">
+    {% if page.cover and page.cover != '' %}
+      {% if page.cover contains '://' %}{% assign cover_url = page.cover %}{% else %}{% assign cover_url = page.cover | relative_url %}{% endif %}
+      <img src="{{ cover_url }}" alt="{{ page.cover_alt | default: page.title | escape }}">
+    {% else %}
+      <div class="project-hero__placeholder"><span>Project image</span></div>
+    {% endif %}
+  </div>
+
+  <header class="project-header">
+    <div class="container is-fluid">
+      <div class="project-heading columns is-variable is-7">
+        <div class="column is-7">
+          <p class="page-kicker">{{ page.kind | default: page.category }}</p>
+          <h1>{{ page.title }}</h1>
+          {% if page.summary %}<p class="project-deck">{{ page.summary }}</p>{% endif %}
+        </div>
+        <div class="column is-5">
+          <dl class="project-meta">
+            {% if page.date_display %}<div><dt>Date</dt><dd>{{ page.date_display }}</dd></div>{% endif %}
+            {% if page.medium %}<div><dt>Medium</dt><dd>{{ page.medium }}</dd></div>{% endif %}
+            {% if page.role %}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+            {% if page.collaborators %}<div><dt>With</dt><dd>{{ page.collaborators }}</dd></div>{% endif %}
+            {% if page.location %}<div><dt>Place</dt><dd>{{ page.location }}</dd></div>{% endif %}
+            {% if page.support %}<div><dt>Support</dt><dd>{{ page.support }}</dd></div>{% endif %}
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="project-body">
+    <div class="container is-fluid">
+      <div class="columns is-variable is-7">
+        <div class="column is-3 project-body__label"><p>About the project</p></div>
+        <article class="column is-7 content project-copy">{{ content }}</article>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-gallery">
+    <div class="container is-fluid">
+      <div class="gallery-header columns is-variable is-7">
+        <div class="column is-3"><p class="page-kicker">Gallery</p></div>
+        <div class="column is-7"><h2>Images, process and documentation</h2></div>
+      </div>
+      <div class="gallery-grid">
+        {% if page.gallery and page.gallery.size > 0 %}
+          {% for item in page.gallery %}
+            <figure class="gallery-item gallery-item--{{ item.size | default: 'normal' }}">
+              {% if item.src and item.src != '' %}
+                {% if item.src contains '://' %}{% assign gallery_url = item.src %}{% else %}{% assign gallery_url = item.src | relative_url %}{% endif %}
+                <img src="{{ gallery_url }}" alt="{{ item.alt | default: page.title | escape }}" loading="lazy">
+              {% else %}
+                <div class="gallery-placeholder"><span>Media to add</span></div>
+              {% endif %}
+              {% if item.caption %}<figcaption>{{ item.caption }}</figcaption>{% endif %}
+            </figure>
+          {% endfor %}
+        {% else %}
+          {% for i in (1..3) %}<figure class="gallery-item"><div class="gallery-placeholder"><span>Media to add</span></div></figure>{% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <nav class="project-back" aria-label="Back to category">
+    <div class="container is-fluid">
+      {% case page.category %}
+        {% when 'artwork' %}{% assign back_url = '/work/' %}{% assign back_label = 'All work' %}
+        {% when 'event' %}{% assign back_url = '/events/' %}{% assign back_label = 'All events' %}
+        {% when 'freelance' %}{% assign back_url = '/freelance/' %}{% assign back_label = 'Freelance work' %}
+        {% when 'research' %}{% assign back_url = '/research/' %}{% assign back_label = 'Research' %}
+      {% endcase %}
+      <a href="{{ back_url | relative_url }}">← {{ back_label }}</a>
+    </div>
+  </nav>
+</main>

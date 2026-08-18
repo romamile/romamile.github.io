@@ -1,0 +1,23 @@
+- title: VR & immersive experiences
+  kind: Immersive production
+  date: Several years
+  text: Designing and building VR experiences for artists, events, start-ups and organisations, from interaction prototype through deployment with real participants and real hardware.
+  meta: VR · Unity · interaction design · deployment
+
+- title: Interactive installations
+  kind: Creative technology
+  date: Selected work
+  text: Turning unusual interaction ideas into installations by combining sensing, software, projection and physical interfaces, and iterating on how the audience actually encounters the piece.
+  meta: Sensors · projection · physical interfaces · creative coding
+
+- title: Rapid prototypes
+  kind: Prototyping
+  date: Ongoing
+  text: Building compact proofs of concept when an interaction needs to be experienced before it can be properly discussed, specified or funded.
+  meta: Creative coding · hardware · interaction prototypes
+
+- title: Exhibition & event production
+  kind: On-site production
+  date: Selected work
+  text: Adapting and troubleshooting interactive systems in exhibitions and public events, where room layout, hardware failures and unexpected audience behaviour become part of the technical problem.
+  meta: Deployment · event tech · troubleshooting

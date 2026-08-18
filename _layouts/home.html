@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{% if page.hero_image contains '://' %}
+  {% assign hero_url = page.hero_image %}
+{% else %}
+  {% assign hero_url = page.hero_image | relative_url %}
+{% endif %}
+<header class="home-hero" style="background-image: linear-gradient(180deg, rgba(16,16,14,.16), rgba(16,16,14,.50)), url('{{ hero_url }}');">
+  <div class="container is-fluid home-hero__inner">
+    <div class="home-identity">
+      <p class="home-identity__role">Artist · researcher · organiser</p>
+      <h1>{{ page.intro }}</h1>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="listing-section">
+    <div class="container is-fluid">
+      <div class="listing-header columns is-variable is-6">
+        <div class="column is-5"><h2 class="listing-title">Selected projects</h2></div>
+        <div class="column is-7"><p class="listing-intro">A selection of artworks and event projects. Research and freelance work have their own more descriptive pages.</p></div>
+      </div>
+      <div class="masonry-grid">
+        {% assign featured_projects = site.projects | where: 'featured', true | sort: 'order' %}
+        {% for project in featured_projects %}{% include project-card.html project=project %}{% endfor %}
+      </div>
+    </div>
+  </section>
+</main>

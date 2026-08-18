@@ -1,0 +1,76 @@
+---
+layout: default
+---
+<main class="profile-page">
+  <header class="profile-header">
+    <div class="container is-fluid">
+      <p class="page-kicker">{{ page.kicker | default: page.title }}</p>
+      <div class="columns is-variable is-8 profile-header__grid">
+        <div class="column is-5">
+          <h1>{{ page.title }}</h1>
+        </div>
+        <div class="column is-7">
+          {% if page.lead %}<p class="profile-lead">{{ page.lead }}</p>{% endif %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="profile-about">
+    <div class="container is-fluid">
+      <div class="columns is-variable is-8">
+        <div class="column is-3">
+          <p class="profile-section-label">{{ page.about_label | default: 'Practice' }}</p>
+        </div>
+        <article class="column is-7 content profile-copy">{{ content }}</article>
+      </div>
+    </div>
+  </section>
+
+  {% if page.data_source %}
+    {% assign examples = site.data[page.data_source] %}
+    {% if examples and examples.size > 0 %}
+    <section class="profile-selected">
+      <div class="container is-fluid">
+        <div class="profile-selected__heading columns is-variable is-8">
+          <div class="column is-3"><p class="profile-section-label">Selected examples</p></div>
+          <div class="column is-7"><h2>{{ page.examples_title | default: 'A few things I have worked on' }}</h2></div>
+        </div>
+        <div class="profile-examples">
+          {% for item in examples %}
+          <article class="profile-example">
+            <div class="profile-example__media{% unless item.image %} profile-example__media--empty{% endunless %}">
+              {% if item.image %}
+                <img src="{{ item.image | relative_url }}" alt="{{ item.alt | default: item.title }}" loading="lazy">
+              {% else %}
+                <span>{{ item.media_label | default: 'Documentation to add' }}</span>
+              {% endif %}
+            </div>
+            <div class="profile-example__body">
+              <div class="profile-example__topline">
+                <p class="project-card__kind">{{ item.kind }}</p>
+                {% if item.date %}<p class="profile-example__date">{{ item.date }}</p>{% endif %}
+              </div>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.text }}</p>
+              {% if item.meta %}<p class="profile-example__meta">{{ item.meta }}</p>{% endif %}
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+  {% endif %}
+
+  {% if page.closing %}
+  <section class="profile-closing">
+    <div class="container is-fluid">
+      <div class="columns is-variable is-8">
+        <div class="column is-3"></div>
+        <div class="column is-7"><p>{{ page.closing }}</p></div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</main>

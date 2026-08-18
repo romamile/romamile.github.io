@@ -1,0 +1,21 @@
+<nav class="navbar site-navbar{% if page.layout == 'home' %} site-navbar--home{% endif %}" role="navigation" aria-label="Main navigation">
+  <div class="container is-fluid site-navbar__inner">
+    <div class="navbar-brand site-navbar__brand">
+      <a class="navbar-item site-brand" href="{{ '/' | relative_url }}" aria-label="Roman Miletitch — home">Roman Miletitch</a>
+      <button class="navbar-burger site-burger" aria-label="Open navigation" aria-expanded="false" data-target="siteMenu" type="button">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+    <div id="siteMenu" class="navbar-menu site-menu">
+      <div class="navbar-end">
+        {% for item in site.data.navigation %}
+          {% assign active = false %}
+          {% if page.url == item.url %}{% assign active = true %}{% endif %}
+          <a class="navbar-item site-nav-link{% if active %} is-current{% endif %}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,25 @@
+{% assign project = include.project %}
+<article class="project-card project-card--{{ project.card_size | default: 'natural' }}">
+  <a href="{{ project.url | relative_url }}" class="project-card__link" aria-label="Open {{ project.title }}">
+    <div class="project-card__media">
+      {% if project.cover and project.cover != '' %}
+        {% if project.cover contains '://' %}
+          {% assign cover_url = project.cover %}
+        {% else %}
+          {% assign cover_url = project.cover | relative_url %}
+        {% endif %}
+        <img src="{{ cover_url }}" alt="{{ project.cover_alt | default: project.title | escape }}" loading="lazy">
+      {% else %}
+        <div class="media-placeholder"><span>{{ project.title }}</span></div>
+      {% endif %}
+    </div>
+    <div class="project-card__text">
+      <div>
+        <p class="project-card__kind">{{ project.kind | default: project.category }}</p>
+        <h2 class="project-card__title">{{ project.title }}</h2>
+      </div>
+      {% if project.date_display %}<p class="project-card__date">{{ project.date_display }}</p>{% endif %}
+    </div>
+    {% if project.summary %}<p class="project-card__summary">{{ project.summary }}</p>{% endif %}
+  </a>
+</article>

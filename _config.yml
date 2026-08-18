@@ -1,0 +1,25 @@
+title: Roman Miletitch
+email: roman.miletitch@gmail.com
+description: >-
+  Portfolio of Roman Miletitch — interactive art, events, freelance creative technology and research.
+url: ""
+baseurl: ""
+permalink: pretty
+markdown: kramdown
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

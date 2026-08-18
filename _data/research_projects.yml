@@ -1,0 +1,23 @@
+- title: Emergence of communication
+  kind: Communication
+  date: Current
+  text: Investigating how communicative behaviour can grow out of interactions that initially have other functions, including ritualisation from instrumental action to cue and eventually signal.
+  meta: Swarm robotics · embodied interaction · language emergence
+
+- title: Swarm sociality
+  kind: Social behaviour
+  date: Current
+  text: Studying how partner-specific interaction histories can create social structure and in-group patterns without giving robots an explicit representation of group identity.
+  meta: Multi-agent systems · social learning · swarm robotics
+
+- title: Embodied language
+  kind: Language emergence
+  date: Ongoing
+  text: Treating language as a coordination process grounded in perception, action, learning and repeated interaction rather than only as manipulation of predefined symbols.
+  meta: Robotics · language evolution · artificial behaviour
+
+- title: Artificial behaviour as an experimental method
+  kind: Method
+  date: Ongoing
+  text: Using simulated and physical agents as controlled experimental systems for questions about communication, cognition and collective behaviour.
+  meta: Simulation · physical robots · experimental design
